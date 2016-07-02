@@ -1,0 +1,7 @@
+Az alkalmazás megkeresi az összes BORIS specifikus fájlt az alkalmazás abszolút útvonalán (rekurzívan bejárva az almappákat is), és felülírja a bennük található hivatkozásokat, ha azok olyan fájlokra mutatnak, amiket a korábbi felderítés során is megtalált. Az 1.1 verzió a külsõ bitképekre mutató hivatkozásokat is korrigálja.
+
+Használati útmutató:
+1. Helyezd át a BORIS projekted arra az útvonalra, amelyikre csak akarod.
+2. Másold a fájlt a BORIS projektkönyvtárba és futtasd az alkalmazást.
+
+Ez az alkalmazás nem tér ki a projektben használt DLL-ekre mutató hivatkozásokra, ezeket kézzel kell újra megkeresned, ha egy másik számítógépre helyezted a projekted, ahol a megfelelõ DLL-ek eltérõ útvonalon érhetõek el.
