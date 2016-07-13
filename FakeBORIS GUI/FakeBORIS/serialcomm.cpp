@@ -15,7 +15,7 @@ const quint8 SerialComm::CMD_READ_INPUT = 0xb9;
 /*
  * A kiküldött jelzésre érkező válaszra várakozás időkorlátjának beállítása.
  */
-const int SerialComm::TIME_LIMIT_MS = 100;
+const int SerialComm::TIME_LIMIT_MS = 50;
 
 /*
  * Az osztály konstruktora.
@@ -75,7 +75,7 @@ void SerialComm::run() {
 
                 /* Minden érkező adatbájt beolvasása. */
                 QByteArray responseData = serialPort.readAll();
-                while(serialPort.waitForReadyRead(10))
+                while(serialPort.waitForReadyRead(TIME_LIMIT_MS))
                     responseData += serialPort.readAll();
 
                 /* A fogadott adat a csatlakoztatott eszköz bemenetein levő jelszintekként értelmezése és
